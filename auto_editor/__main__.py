@@ -114,15 +114,16 @@ def main():
     size.add_argument('--video_codec', '-vcodec', metavar='',
         help='set the video codec for the output file.')
 
-    # sub = parser.add_argument_group('Sub-Commands')
-    # sub.add_argument('ignore',
-    #     help="Leave the input alone in this range. (Dont't edit there)")
-    ## chop_off_before
-    ## chop_off_after
+
 
     # dep = parser.add_argument_group('Deprecated Options')
 
     args = parser.parse_args()
+
+    for item in args.ignore:
+        print(item)
+
+    sys.exit(0)
 
     dirPath = os.path.dirname(os.path.realpath(__file__))
     # fixes pip not able to find other included modules.
